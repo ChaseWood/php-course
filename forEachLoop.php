@@ -7,13 +7,19 @@
 </head>
 <body>
 
+
 <?php
 
+$numbers = [345,234,523,123,432,532,432,234,234];
 
+foreach($numbers as $number){
+
+    echo $number . '<br>';
+ 
+}
 
 
 ?>
-
 
 
     
