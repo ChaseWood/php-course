@@ -16,12 +16,28 @@
 	
 	<?php  
 
-/*  Step1: Define a function and make it return a calculation of 2 numbers
+//   Step1: Define a function and make it return a calculation of 2 numbers
 
-	Step 2: Make a function that passes parameters and call it using parameter values
+function calc($num1, $num2){
+	$sum = $num1 + $num2;
+	return $sum;
+};
+
+$result = calc(11,23);
+
+echo $result . '<br>';
+
+// 	Step 2: Make a function that passes parameters and call it using parameter values
 
 
- */
+function hola($hello){
+	echo $hello;
+};
+
+hola('this function says hello');
+
+
+ 
 
 	
 ?>
