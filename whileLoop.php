@@ -15,6 +15,7 @@ while( $counter < 10) {
 
     $counter ++;
     echo '<h1>Hello Student</h1>';
+    echo $counter;
 
 }
 
