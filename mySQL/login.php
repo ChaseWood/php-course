@@ -1,3 +1,39 @@
+<?php
+
+
+if(isset($_POST["submit"])){
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $connection = mysqli_connect('localhost', 'root', '', 'loginApp', 8080);
+
+    if($connection) {
+
+        echo 'we are connected to the database';
+    } else {
+        die("database connection failed");
+    }
+
+
+    // if($username && $password){
+    //     echo $username.'<br>';
+    //     echo $password;
+    // } else {
+
+    //     echo "this field cannot be blank";
+    // }
+
+    
+
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,26 +47,24 @@
 <body>
 
 <div class="container">
-    <div class="col-xs-6">
+    <div class="col-sm-6">
         <form action="login.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control">
+                <input type="text" name="username" class="form-control">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control">
+                <input type="password" name="password" class="form-control">
+            </div>
+            <div>
+                <input type="submit" name="submit" class="btn btn-primary">
             </div>
         </form>
     </div>
 </div>
 
-<?php
 
-
-
-
-?>
 
 
 
