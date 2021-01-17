@@ -7,6 +7,7 @@
 
 if(isset($_POST['submit'])){
     updateTable();
+    echo 'Update was successful';
 }
 
 ?>
