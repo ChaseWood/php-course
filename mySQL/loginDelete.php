@@ -3,14 +3,7 @@
     include "functions.php"
 ?>
 
-<?php 
-
-if(isset($_POST['submit'])){
-    deleteRows();
-    
-}
-
-?>
+<?php deleteRows();?>
 
 
 
@@ -31,6 +24,7 @@ if(isset($_POST['submit'])){
     
 
     <div class="col-sm-6">
+    <h1 class="text-center">Delete</h1>
         <form action="loginDelete.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>

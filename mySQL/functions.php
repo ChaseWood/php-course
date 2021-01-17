@@ -21,6 +21,7 @@ function showAllData(){
 
 
 function updateTable(){
+    if(isset($_POST['submit'])){
     global $connection;
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -35,12 +36,18 @@ function updateTable(){
 
     if(!$result){
         die("QUERY FAILED" . mysqli_error($connection));
+    } else {
+        echo "Record Updated";
     }
     
-}
+}}
 
 function deleteRows(){
+
+    if(isset($_POST['submit'])){
+
     global $connection;
+
     $username = $_POST['username'];
     $password = $_POST['password'];
     $id = $_POST['id'];
@@ -52,6 +59,29 @@ function deleteRows(){
 
     if(!$result){
         die("QUERY FAILED" . mysqli_error($connection));
+    }else{
+        echo "Record removed";
     }
     
+}}
+
+function createRows() {
+    if(isset($_POST["submit"])){
+
+        global $connection;
+
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        $query = "INSERT INTO users(username,password) ";
+        $query .= "VALUES ('$username', '$password')";
+        
+        $result = mysqli_query($connection, $query);
+
+        if(!$result){
+            die('Query FAILED' . mysqli_error());
+        } else {
+            echo "Record Created";
+        }
+    }
 }
