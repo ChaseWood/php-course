@@ -85,3 +85,27 @@ function createRows() {
         }
     }
 }
+
+function readRows() {
+
+    global $connection;
+
+    if($connection) {
+        echo 'we are connected to the database '."<br>";
+    } else {
+        die("database connection failed");
+    }
+
+    $query = "SELECT * FROM users";
+    
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+        die('Query FAILED' . mysqli_error());
+    }
+
+    while($row = mysqli_fetch_assoc($result)){
+        print_r($row);
+    }
+
+}
